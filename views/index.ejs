@@ -1,0 +1,22 @@
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Vue SSR Example</title>
+        <script type="importmap">
+          {
+            "imports": {
+              "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+            }
+          }
+        </script>
+        <script type="module">
+          import {createSSRApp} from 'vue';
+          <%- clientApp %>
+          createApp(<%- items %>).mount('#app')
+        </script>
+      </head>
+      <body>
+      <h1>Ranger Events</h1>
+      <div id="app"><%- html %></div>
+      </body>
+    </html>
